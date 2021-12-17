@@ -6,21 +6,24 @@
   left: 0;
   top: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth !important;
 }
 
 body {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   width: 100%;
   overflow-x: hidden !important;
 }
 
 header {
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   background: #fff;
+  z-index: 11111;
   padding: 50px 90px;
 }
 header .logo {
@@ -36,6 +39,7 @@ header nav {
   width: fit-content;
   left: 310px;
   top: 35px;
+  z-index: 11111;
 }
 header nav ul {
   list-style: none;
@@ -44,10 +48,17 @@ header nav ul {
 }
 
 header nav ul li {
+  margin: 0px 22px;
+}
+header nav ul li a {
   font-family: Poppins;
   font-weight: 500;
   color: #10142a;
-  margin: 0px 22px;
+  text-decoration: none;
+}
+.active-nav {
+  font-size: 18px;
+  font-weight: 600;
 }
 header .button {
   display: inline-block;
@@ -286,7 +297,7 @@ header .toggle {
   height: 380px;
   position: absolute;
   left: 165px;
-  top: 750px;
+  top: 650px;
   border: 3px solid rgba(227, 20, 156, 0.75);
   box-sizing: border-box;
   border-radius: 150px 150px 150px 0px;
@@ -540,13 +551,13 @@ header .toggle {
   color: #e3149c;
 }
 #projects .owl-carousel {
-  margin: 100px 10px;
-  padding: 10px 50px;
+  margin: 100px 30px;
+  padding: 10px 10px;
 }
 
 #projects .item {
   background-position: center;
-  width: 340px;
+  width: 540px;
   height: 420px;
   padding: 20px 30px;
   display: flex;
@@ -571,7 +582,7 @@ header .toggle {
 }
 #projects .owl-stage .center > .item {
   height: 460px;
-  width: 340px;
+  width: 540px;
   border-radius: 26px;
   box-sizing: border-box;
 }
@@ -748,7 +759,7 @@ header .toggle {
   header {
     position: fixed;
 
-    z-index: 1;
+    z-index: 11111;
   }
 
   header nav {
@@ -756,6 +767,7 @@ header .toggle {
     width: fit-content;
     left: 210px;
     top: 40px;
+    z-index: 11111;
   }
   .banner {
     display: flex;
@@ -937,7 +949,7 @@ header .toggle {
 @media (max-width: 850px) and (min-width: 650px) {
   header {
     position: fixed;
-    z-index: 1;
+    z-index: 111111;
   }
 
   header nav {
@@ -945,6 +957,8 @@ header .toggle {
     width: fit-content;
     left: 70px;
     top: 80px;
+    z-index: 11111;
+
     visibility: hidden;
     pointer-events: none;
   }
@@ -1156,10 +1170,9 @@ header .toggle {
   }
   #projects .item {
     background-position: center;
-    max-width: 400px;
-    max-height: 400px;
-    min-width: 300px;
-    min-height: 300px;
+    width: 400px;
+    height: 400px;
+
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
@@ -1173,6 +1186,11 @@ header .toggle {
     border-radius: 26px;
     overflow: hidden;
     transition: 0.3s ease-in-out;
+  }
+
+  #projects .owl-stage .center > .item {
+    width: 400px;
+    height: 420px;
   }
 
   #footer {
@@ -1212,7 +1230,7 @@ header .toggle {
   }
   header {
     position: fixed;
-    z-index: 1;
+    z-index: 111111;
     justify-content: space-between;
     padding: 50px 20px;
     transition: 0.3s ease-in-out;
@@ -1231,6 +1249,7 @@ header .toggle {
     height: 350px;
     width: 450px;
     transition: 0.3s ease-in-out;
+    z-index: 11111;
   }
   header nav ul {
     background-color: #fff;
@@ -1238,7 +1257,7 @@ header .toggle {
     height: 350px;
   }
   .nav-show {
-    left: 0;
+    left: -10px;
     position: fixed;
     padding: 5px 15px;
     z-index: 1;

@@ -29,10 +29,10 @@
       <div class="logo">Zahida<span>Ilyas</span></div>
       <nav>
         <ul>
-          <li class="menu" href="#banner">Home</li>
-          <li class="menu" href="#about">About</li>
-          <li class="menu" href="#services">Services</li>
-          <li class="menu" href="#projects">Portfolio</li>
+          <li class="menu"><a class="links" href="#banner">Home</a></li>
+          <li class="menu"><a class="links" href="#about-me">About</a></li>
+          <li class="menu"><a class="links" href="#services">Services</a></li>
+          <li class="menu"><a class="links" href="#projects">Projects</a></li>
         </ul>
       </nav>
       <div class="button">
@@ -43,7 +43,7 @@
       </div>
     </header>
 
-    <div class="banner">
+    <section class="banner" id="banner">
       <div class="fire">
         <img src="images/Frame.png" alt="portfolio" />
       </div>
@@ -87,7 +87,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <section id="about-me">
       <div class="background">
@@ -374,6 +374,7 @@
         <button type="submit">Submit</button>
       </form>
     </section>
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <script
       language="JavaScript"
@@ -388,29 +389,45 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 15,
-        center: true,
-        nav: true,
-        items: 1,
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          loop: true,
+          margin: 15,
+          center: true,
+          nav: true,
+          items: 1,
 
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 1,
-          },
-          600: {
-            items: 2,
-          },
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 1,
+            },
+            600: {
+              items: 2,
+            },
 
-          1000: {
-            items: 2,
+            1000: {
+              items: 2,
+            },
           },
-        },
+        });
       });
+
+      ScrollReveal({
+        reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal(".banner", { delay: 500, origin: "left" });
+      ScrollReveal().reveal("#about-me", { delay: 500, origin: "bottom" });
+      ScrollReveal().reveal("#services", { delay: 500, origin: "right" });
+      ScrollReveal().reveal("#projects", { delay: 500, origin: "left" });
+      ScrollReveal().reveal("#footer", { delay: 500, origin: "bottom" });
+      ScrollReveal().reveal(".banner h1", { delay: 500, origin: "left" });
     </script>
   </body>
 </html>
